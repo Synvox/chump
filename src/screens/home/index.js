@@ -1,16 +1,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {hashHistory} from 'react-router'
-import {MessageActions} from '../../store'
+import {MessageActions, UserActions} from '../../store'
 
 const {sendMessage, listen} = MessageActions
+const {getUser} = UserActions
 
 class HomeScreen extends Component {
   componentDidMount() {
     const {user} = this.props
-    if (user) {
+    if (user)
       listen()
-    }
+    else
+      getUser()
   }
   render() {
 
@@ -31,9 +33,10 @@ class HomeScreen extends Component {
     return (
       <form onSubmit={submit}>
         {messages.map((msg)=>{
-          console.log(msg)
           if (msg.type === 'text')
-            return (<div>{msg.data.value}</div>)
+            return (
+            <div key={msg.id}>{msg.data.value}</div>
+          )
         })}
         <div>
           <input required type="text" ref={el=>textInput = el}/>

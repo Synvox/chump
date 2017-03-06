@@ -1,1 +1,1 @@
-export const CHAMP_URL = 'http://localhost:3030'
+export const CHAMP_URL = 'http://coding-challenge-js.stukent.com'
