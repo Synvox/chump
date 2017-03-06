@@ -12,3 +12,6 @@ This is a barebones application whose structure is similar to the applications w
 7. `npm start` to start the development server
 8. Go to `localhost:3031` in your browser and register.
 9. Start hacking.
+
+## Server Code
+The server for Chump is already hosted for you at http://coding-challenge-js.stukent.com and open source at https://github.com/Synvox/champ.
