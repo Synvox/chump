@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {hashHistory} from 'react-router'
 import {MessageActions, UserActions} from '../../store'
 
+import  Gravatar  from 'react-gravatar'
+
 const {sendMessage, listen} = MessageActions
 const {getUser} = UserActions
 
@@ -35,10 +37,16 @@ class HomeScreen extends Component {
         {messages.map((msg)=>{
           if (msg.type === 'text')
             return (
-            <div key={msg.id}>{msg.data.value}</div>
+            <div className="message" key={msg.id}>
+              <div className="message-img"><Gravatar email={msg.user.email} /></div>
+              <div className="message-text">
+                <div className="message-user">{msg.user.username}</div>
+                <div className="message-body">{msg.data.value}</div>
+              </div>
+            </div>
           )
         })}
-        <div>
+        <div className="input-div">
           <input required type="text" ref={el=>textInput = el}/>
           <button>Send</button>
         </div>

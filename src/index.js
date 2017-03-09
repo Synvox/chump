@@ -9,6 +9,7 @@ import { Router, Route, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { hashHistory } from 'react-router'
 
+
 import store from './store'
 
 import IndexScreen from './screens/index'
