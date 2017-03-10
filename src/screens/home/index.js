@@ -36,6 +36,7 @@ class HomeScreen extends Component {
       <form onSubmit={submit}>
         {messages.map((msg)=>{
           if (msg.type === 'text')
+            var date = new Date(msg.updatedAt);
             return (
             <div className="message" key={msg.id}>
               <div className="message-img"><Gravatar email={msg.user.email} /></div>
@@ -43,6 +44,7 @@ class HomeScreen extends Component {
                 <div className="message-user">{msg.user.username}</div>
                 <div className="message-body">{msg.data.value}</div>
               </div>
+              <div className="message-time">{date.toLocaleTimeString()}</div>
             </div>
           )
         })}
