@@ -1,5 +1,65 @@
+
+$main-color: whitesmoke;
+/*$secondary-color: ;*/
+$background-color: floralwhite;
+
+input:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
   padding: 40px;
-  font-family: sans-serif;
+  font-family: Verdana;
+
+  background-color: $background-color;
+}
+
+.message  {
+margin-bottom: 8px;
+    /* border-top: 2px solid black; */
+    display: flex;
+    /* padding: 5px 0; */
+    background-color: $main-color;
+}
+
+.message-time {
+  margin-left: auto;
+  align-self: flex-end;
+  font-size: smaller;
+}
+
+.message-text {
+
+  display: flex;
+  flex-direction: column;;
+  justify-content: flex-end;
+}
+
+.message:first-child {
+  border-top: none;
+}
+
+.message-img {
+  margin-right: 5px;
+}
+
+.message-user {
+  margin-right: 5px;
+  font-style: italic;
+}
+
+.input-div {
+   input {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  button {
+    margin-top: 5px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    float: right;
+  }
 }
