@@ -8,6 +8,7 @@ import {Provider} from 'react-redux'
 import { Router, Route, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { hashHistory } from 'react-router'
+import {ensureState} from 'redux-optimistic-ui'
 
 
 import store from './store'
@@ -17,7 +18,11 @@ import LoginScreen from './screens/login'
 import HomeScreen from './screens/home'
 import RegisterScreen from './screens/register'
 
-const history = syncHistoryWithStore(hashHistory, store)
+const history = syncHistoryWithStore(hashHistory, store,
+    {selectLocationState: (state) => {
+      var eState = ensureState(state)
+      return eState
+    }})
 
 ReactDOM.render(
   <Provider store={store}>
